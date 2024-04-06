@@ -49,7 +49,7 @@ module.exports = {
                 return res.status(403).json({ message: "Email registered" });
             }
 
-            const user = await User.create({ name, email, password: bcrypt.hashSync(password,10), role: 'admin'});
+            const user = await User.create({ name, email, password: bcrypt.hashSync(password,10), role: 'admin' });
 
             delete user.dataValues.password;
 
